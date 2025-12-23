@@ -2,7 +2,13 @@
 server:
   port: 8080
 
+jwt:
+  secret: very-very-strong-secret-key-256bit
+  expiration: 3600
+
 spring:
+  jackson:
+    time-zone: UTC
   datasource:
     url: jdbc:postgresql://localhost:5432/bankdb
     username: bankuser
@@ -11,10 +17,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
   liquibase:
     change-log: classpath:/db/migration/changelog-master.yaml
     enabled: true
+

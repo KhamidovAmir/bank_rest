@@ -1,4 +1,13 @@
 package com.example.bankcards.dto;
 
-public class TransferRequestDto {
-}
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
+
+import java.math.BigDecimal;
+
+public record TransferRequestDto (
+        @NotNull Long fromCardId,
+        @NotNull Long toCardId,
+        @NotNull @DecimalMin("0.01") BigDecimal amount
+)
+{}

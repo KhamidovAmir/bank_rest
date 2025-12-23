@@ -1,4 +1,6 @@
 package com.example.bankcards.dto;
 
-public record JwtResponseDto() {
+public record JwtResponseDto(
+        String token
+) {
 }

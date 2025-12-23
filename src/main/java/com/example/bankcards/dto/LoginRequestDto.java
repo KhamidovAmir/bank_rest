@@ -1,4 +1,9 @@
 package com.example.bankcards.dto;
 
-public class LoginRequestDto {
-}
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+public record LoginRequestDto (
+        @Email String email,
+        @NotBlank String password
+){}
